@@ -1,0 +1,291 @@
+/* =========================================
+   HP NOCTRA — LINKS PAGE
+   ========================================= */
+
+
+/* ---------- Base ---------- */
+
+:root {
+    --background: #0b0a0f;
+    --surface: rgba(255, 255, 255, 0.045);
+    --surface-hover: rgba(255, 255, 255, 0.075);
+
+    --text: #f2eee8;
+    --muted: #b9b1b8;
+
+    --accent: #c6a6b8;
+    --border: rgba(255, 255, 255, 0.12);
+
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(116, 77, 110, 0.22),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(72, 52, 78, 0.14),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 50px 20px 35px;
+}
+
+
+/* ---------- Main container ---------- */
+
+.links-page {
+    width: 100%;
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ---------- Profile ---------- */
+
+.profile {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.profile-image {
+    width: 108px;
+    height: 108px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #9d7d97,
+            #47384c 55%,
+            #211b26 100%
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        inset 0 0 25px rgba(255, 255, 255, 0.08);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.profile h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+
+.tagline {
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ---------- Links ---------- */
+
+.links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.link-button {
+    position: relative;
+
+    width: 100%;
+    min-height: 62px;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.link-button:hover {
+    transform: translateY(-2px);
+
+    background: var(--surface-hover);
+
+    border-color: rgba(198, 166, 184, 0.4);
+}
+
+
+.link-button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Icons ---------- */
+
+.icon {
+    position: absolute;
+
+    left: 22px;
+
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.link-button span:last-child {
+    font-size: 15px;
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 40px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+
+    body {
+        padding:
+            35px 18px 30px;
+    }
+
+
+    .profile {
+        margin-bottom: 30px;
+    }
+
+
+    .profile-image {
+        width: 94px;
+        height: 94px;
+
+        font-size: 30px;
+    }
+
+
+    .profile h1 {
+        font-size: 42px;
+    }
+
+
+    .tagline {
+        font-size: 13px;
+    }
+
+
+    .link-button {
+        min-height: 58px;
+    }
+}
