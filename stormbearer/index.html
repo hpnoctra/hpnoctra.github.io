@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stormbearer | HP Noctra</title>
+
+    <meta name="description"
+          content="Stormbearer — Book One of The Broken Elements by HP Noctra.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           ROOT
+        ========================= */
+
+        :root {
+            --navy: #081722;
+            --navy-light: #0d2232;
+            --blue: #18364d;
+            --teal: #24c9d0;
+            --teal-soft: #7fd9df;
+            --cream: #e7edf0;
+            --muted: #9eafb8;
+            --line: rgba(127, 217, 223, 0.35);
+            --gold: #b89557;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 50% 15%, #17344a 0%, transparent 38%),
+                linear-gradient(
+                    180deg,
+                    #07141f 0%,
+                    #091b29 35%,
+                    #07151f 70%,
+                    #050d14 100%
+                );
+            color: var(--cream);
+            font-family: "Inter", sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 28px 5vw;
+        }
+
+        .brand {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 17px;
+            letter-spacing: 0.35em;
+            color: var(--cream);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .nav-links .links-button {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 10px 17px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            padding: 120px 7vw 80px;
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 70% 55%,
+                    rgba(36, 201, 208, 0.13),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(5, 17, 27, 0.95),
+                    rgba(5, 17, 27, 0.45)
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 650px;
+        }
+
+        .series {
+            margin-bottom: 22px;
+
+            color: var(--teal-soft);
+            font-size: 12px;
+            letter-spacing: 0.38em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(70px, 9vw, 150px);
+            line-height: 0.8;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+        }
+
+        .water-drop {
+            width: 9px;
+            height: 15px;
+            margin: 30px 0;
+
+            background: var(--teal-soft);
+
+            border-radius: 70% 30% 65% 35% / 60% 60% 40% 40%;
+            transform: rotate(45deg);
+        }
+
+        .tagline {
+            max-width: 520px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(26px, 3vw, 40px);
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+        }
+
+        .description {
+            max-width: 500px;
+
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 35px;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            min-width: 160px;
+            padding: 14px 24px;
+
+            border: 1px solid var(--line);
+            border-radius: 999px;
+
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .button.primary {
+            background: var(--cream);
+            color: var(--navy);
+            border-color: var(--cream);
+        }
+
+        .button:hover {
+            background: rgba(127, 217, 223, 0.1);
+            border-color: var(--teal-soft);
+        }
+
+        .button.primary:hover {
+            background: var(--teal-soft);
+            border-color: var(--teal-soft);
+        }
+
+
+        /* =========================
+           HERO BOOK
+        ========================= */
+
+        .hero-book {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 650px;
+        }
+
+        .hero-book::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(36, 201, 208, 0.2),
+                    transparent 65%
+                );
+
+            filter: blur(15px);
+        }
+
+        .book-image {
+            position: relative;
+            z-index: 2;
+
+            width: min(520px, 90%);
+
+            filter:
+                drop-shadow(0 40px 45px rgba(0, 0, 0, 0.65))
+                drop-shadow(0 0 35px rgba(36, 201, 208, 0.12));
+
+            transform: rotate(1deg);
+            transition: transform 0.4s ease;
+        }
+
+        .book-image:hover {
+            transform: rotate(0deg) translateY(-8px);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section.content-section {
+            position: relative;
+
+            max-width: 1200px;
+            margin: 0 auto;
+
+            padding: 110px 6vw;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .section-label {
+            margin-bottom: 15px;
+
+            color: var(--teal-soft);
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin: 0 0 35px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(42px, 5vw, 70px);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+        }
+
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-image {
+            overflow: hidden;
+
+            border: 1px solid var(--line);
+            border-radius: 150px 150px 10px 10px;
+        }
+
+        .story-image img {
+            width: 100%;
+            aspect-ratio: 0.72;
+            object-fit: cover;
+        }
+
+        .story-copy p {
+            color: var(--muted);
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            line-height: 1.65;
+        }
+
+        .story-copy .emphasis {
+            margin-top: 30px;
+
+            color: var(--cream);
+            font-style: italic;
+            font-size: 25px;
+        }
+
+
+        /* =========================
+           ELEMENTS
+        ========================= */
+
+        .elements {
+            text-align: center;
+        }
+
+        .elements-intro {
+            max-width: 600px;
+            margin: 0 auto 55px;
+
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .element-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .element {
+            padding: 40px 20px;
+
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .element-symbol {
+            margin-bottom: 20px;
+
+            color: var(--teal);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+        }
+
+        .element h3 {
+            margin: 0 0 10px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .element p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SERIES
+        ========================= */
+
+        .series-section {
+            text-align: center;
+        }
+
+        .book-series {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .series-book {
+            padding: 30px 15px;
+
+            border-top: 1px solid var(--line);
+
+            transition: transform 0.25s ease;
+        }
+
+        .series-book:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-number {
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .series-book h3 {
+            margin: 15px 0 8px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            letter-spacing: 0.12em;
+        }
+
+        .series-book p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .series-book.active h3 {
+            color: var(--teal-soft);
+        }
+
+
+        /* =========================
+           BUY
+        ========================= */
+
+        .buy {
+            text-align: center;
+        }
+
+        .buy-copy {
+            max-width: 550px;
+            margin: 0 auto 35px;
+
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .retailers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .retailer {
+            min-width: 180px;
+        }
+
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+            text-align: center;
+            padding-bottom: 120px;
+        }
+
+        .newsletter-copy {
+            max-width: 550px;
+            margin: 0 auto 30px;
+
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 60px 6vw;
+
+            border-top: 1px solid var(--line);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: var(--muted);
+        }
+
+        .footer-brand {
+            font-family: "Cormorant Garamond", serif;
+            letter-spacing: 0.35em;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav {
+                padding: 22px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding: 120px 25px 70px;
+            }
+
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: clamp(60px, 17vw, 100px);
+            }
+
+            .water-drop {
+                margin: 25px auto;
+            }
+
+            .description {
+                margin: 0 auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-book {
+                min-height: auto;
+                margin-top: 40px;
+            }
+
+            .book-image {
+                width: 85%;
+            }
+
+            section.content-section {
+                padding: 80px 25px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .story-image {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .element-grid,
+            .book-series {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .element-grid,
+            .book-series {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .retailers {
+                flex-direction: column;
+            }
+
+            .retailer {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header class="nav">
+
+        <a href="/" class="brand">
+            HP NOCTRA
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#story">
+                Story
+            </a>
+
+            <a href="#elements">
+                Elements
+            </a>
+
+            <a href="#series">
+                Series
+            </a>
+
+            <a href="#buy">
+                Buy
+            </a>
+
+            <a href="/links/" class="links-button">
+                Links →
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="series">
+                    The Broken Elements · Book One
+                </div>
+
+                <h1>
+                    STORMBEARER
+                </h1>
+
+                <div class="water-drop"></div>
+
+                <div class="tagline">
+                    Some storms are born.<br>
+                    Others are made.
+                </div>
+
+                <p class="description">
+                    In a world divided by elements, something is stirring
+                    beneath the surface. And some storms cannot be contained.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#buy" class="button primary">
+                        Get the book
+                    </a>
+
+                    <a href="#story" class="button">
+                        Explore the story
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-book">
+
+                <!--
+                    PUT YOUR STORMBEARER BOOK IMAGE HERE.
+
+                    Rename your book image to:
+                    stormbearer-book.png
+
+                    and upload it into this same folder.
+                -->
+
+                <img
+                    src="stormbearer-book.png"
+                    alt="Stormbearer by HP Noctra"
+                    class="book-image"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STORY
+        ========================= -->
+
+        <section class="content-section" id="story">
+
+            <div class="divider"></div>
+
+            <div class="story" style="padding-top: 90px;">
+
+                <div class="story-image">
+
+                    <!--
+                        PUT YOUR PORTRAIT / COVER ART HERE.
+
+                        Rename the image to:
+                        stormbearer-cover.png
+                    -->
+
+                    <img
+                        src="stormbearer-cover.png"
+                        alt="Stormbearer"
+                    >
+
+                </div>
+
+
+                <div class="story-copy">
+
+                    <div class="section-label">
+                        The story
+                    </div>
+
+                    <h2 class="section-title">
+                        THE STORM WITHIN
+                    </h2>
+
+                    <p>
+                        Runa has spent her life trying to understand the
+                        storm inside her — and trying even harder to keep
+                        anyone else from seeing it.
+                    </p>
+
+                    <p>
+                        But when the boundaries between the elements begin
+                        to shift, hiding is no longer an option.
+                    </p>
+
+                    <p>
+                        What begins as survival becomes something far more
+                        dangerous: a journey into magic, belonging, and the
+                        forces that have been waiting beneath the surface.
+                    </p>
+
+                    <p class="emphasis">
+                        Some storms can't be silenced.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ELEMENTS
+        ========================= -->
+
+        <section class="content-section elements" id="elements">
+
+            <div class="divider"></div>
+
+            <div style="padding-top: 90px;">
+
+                <div class="section-label">
+                    The world
+                </div>
+
+                <h2 class="section-title">
+                    FIND YOUR ELEMENT
+                </h2>
+
+                <p class="elements-intro">
+                    Four elements. Four territories. One balance that was
+                    never meant to break.
+                </p>
+
+
+                <div class="element-grid">
+
+                    <div class="element">
+
+                        <div class="element-symbol">
+                            ◇
+                        </div>
+
+                        <h3>Water</h3>
+
+                        <p>
+                            Flow · Depth · Change
+                        </p>
+
+                    </div>
+
+
+                    <div class="element">
+
+                        <div class="element-symbol">
+                            ◇
+                        </div>
+
+                        <h3>Air</h3>
+
+                        <p>
+                            Freedom · Knowledge · Truth
+                        </p>
+
+                    </div>
+
+
+                    <div class="element">
+
+                        <div class="element-symbol">
+                            ◇
+                        </div>
+
+                        <h3>Fire</h3>
+
+                        <p>
+                            Desire · Power · Sacrifice
+                        </p>
+
+                    </div>
+
+
+                    <div class="element">
+
+                        <div class="element-symbol">
+                            ◇
+                        </div>
+
+                        <h3>Earth</h3>
+
+                        <p>
+                            Identity · Roots · Home
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SERIES
+        ========================= -->
+
+        <section class="content-section series-section" id="series">
+
+            <div class="divider"></div>
+
+            <div style="padding-top: 90px;">
+
+                <div class="section-label">
+                    The series
+                </div>
+
+                <h2 class="section-title">
+                    THE BROKEN ELEMENTS
+                </h2>
+
+
+                <div class="book-series">
+
+                    <div class="series-book active">
+
+                        <div class="book-number">
+                            Book One
+                        </div>
+
+                        <h3>
+                            STORMBEARER
+                        </h3>
+
+                        <p>
+                            Available now
+                        </p>
+
+                    </div>
+
+
+                    <div class="series-book">
+
+                        <div class="book-number">
+                            Book Two
+                        </div>
+
+                        <h3>
+                            AIR
+                        </h3>
+
+                        <p>
+                            Coming soon
+                        </p>
+
+                    </div>
+
+
+                    <div class="series-book">
+
+                        <div class="book-number">
+                            Book Three
+                        </div>
+
+                        <h3>
+                            FIRE
+                        </h3>
+
+                        <p>
+                            Coming soon
+                        </p>
+
+                    </div>
+
+
+                    <div class="series-book">
+
+                        <div class="book-number">
+                            Book Four
+                        </div>
+
+                        <h3>
+                            EARTH
+                        </h3>
+
+                        <p>
+                            Coming soon
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BUY
+        ========================= -->
+
+        <section class="content-section buy" id="buy">
+
+            <div class="divider"></div>
+
+            <div style="padding-top: 90px;">
+
+                <div class="section-label">
+                    Stormbearer
+                </div>
+
+                <h2 class="section-title">
+                    GET YOUR COPY
+                </h2>
+
+                <p class="buy-copy">
+                    Ready to find your element?
+                    Choose your preferred retailer below.
+                </p>
+
+
+                <div class="retailers">
+
+                    <!--
+                        REPLACE # WITH YOUR REAL BOOK LINKS
+                    -->
+
+                    <a href="#" class="button retailer">
+                        Amazon
+                    </a>
+
+                    <a href="#" class="button retailer">
+                        Barnes & Noble
+                    </a>
+
+                    <a href="#" class="button retailer">
+                        Kobo
+                    </a>
+
+                    <a href="#" class="button retailer">
+                        Apple Books
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEWSLETTER
+        ========================= -->
+
+        <section class="content-section newsletter">
+
+            <div class="divider"></div>
+
+            <div style="padding-top: 90px;">
+
+                <div class="section-label">
+                    From HP Noctra
+                </div>
+
+                <h2 class="section-title">
+                    NOCTRA'S BEEHIVE
+                </h2>
+
+                <p class="newsletter-copy">
+                    Stories, secrets, chaos, and whatever I'm currently
+                    creating.
+                </p>
+
+                <a
+                    href="https://hpnoctra.beehiiv.com/"
+                    class="button"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Join the Beehive →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+            HP NOCTRA
+        </div>
+
+        <div class="footer-links">
+
+            <a href="/links/">
+                Links
+            </a>
+
+            <a href="https://hpnoctra.beehiiv.com/"
+               target="_blank"
+               rel="noopener">
+                Newsletter
+            </a>
+
+        </div>
+
+        <div>
+            © 2026 HP NOCTRA
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
