@@ -82,19 +82,16 @@ body {
 
 .logo {
     display: block;
-
     width: 100%;
     max-width: 420px;
     height: auto;
 
     margin: 0 auto 22px;
 
-    border-radius: 50px;
+   border-radius: 100px;
+   clip-path: inset(0 round 100px);
 
-    border: 2px solid rgba(255, 255, 255, 0.2);
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
 }
 
 
