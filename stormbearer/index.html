@@ -127,9 +127,9 @@
     min-height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
 
     padding: 130px 7vw 90px;
 
@@ -173,14 +173,14 @@
         }
 
         .hero h1 {
-            margin: 0;
+    margin: 0;
 
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(70px, 9vw, 150px);
-            line-height: 0.8;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-        }
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 9vw, 150px);
+    line-height: 0.8;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
 
         .water-drop {
             width: 9px;
@@ -291,7 +291,7 @@
         .book-image {
     display: block;
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     height: auto;
 
     border-radius: 12px;
@@ -588,10 +588,6 @@
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
-
     /* =========================
    MOBILE
    ========================= */
@@ -641,12 +637,15 @@
     }
 
     .hero h1 {
-        font-size: clamp(42px, 13vw, 65px);
-        line-height: 0.9;
-        letter-spacing: 0.04em;
+    width: 100%;
+    margin: 0;
 
-        white-space: normal;
-    }
+    font-size: clamp(42px, 13vw, 64px);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+
+    overflow-wrap: break-word;
+}
 
     .water-drop {
         margin: 25px auto;
